@@ -54,22 +54,27 @@
           .index(0)
           .key(@"btnTitle").string);
     //按钮标题
+    
+    NSLog(@"%@",Json(resultJSON)[@"ext"][@"btnList"][0][@"btnTitle"].string);
+    
     NSLog(@"%@", Json(resultJSON)
           .key(@"ext")
           .key(@"btnList")
           .index(0)
           .key(@"jumpUrl")
           .key(@"number").number);
-    //
+    //转number
+    
     NSLog(@"%@", Json(resultJSON)
           .key(@"ext")
           .key(@"btnList")
           .index(0)
           .key(@"jumpUrl")
           .key(@"string").string);
+//    转string
     
     NSLog(@"%@", Json(resultJSON).key(@"ext").key(@"cardTitle").number);
-    //null 取值类型错误 ❌
+    //0 number强转默认规则为0，同yymodel
     
     NSLog(@"%@", Json(resultJSON)
           .key(@"ext")

@@ -13,7 +13,6 @@
 		43CE0C582202D57900144B8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CE0C572202D57900144B8E /* Assets.xcassets */; };
 		43CE0C5B2202D57900144B8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CE0C592202D57900144B8E /* LaunchScreen.storyboard */; };
 		43CE0C5E2202D57900144B8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CE0C5D2202D57900144B8E /* main.m */; };
-		43CE0C662202D91000144B8E /* NSDictionary+Json.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CE0C652202D91000144B8E /* NSDictionary+Json.m */; };
 		43CE0C692203E85B00144B8E /* JsonAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CE0C682203E85B00144B8E /* JsonAccess.m */; };
 /* End PBXBuildFile section */
 
@@ -28,8 +27,6 @@
 		43CE0C5A2202D57900144B8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43CE0C5C2202D57900144B8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43CE0C5D2202D57900144B8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		43CE0C642202D91000144B8E /* NSDictionary+Json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Json.h"; sourceTree = "<group>"; };
-		43CE0C652202D91000144B8E /* NSDictionary+Json.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Json.m"; sourceTree = "<group>"; };
 		43CE0C672203E85B00144B8E /* JsonAccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsonAccess.h; sourceTree = "<group>"; };
 		43CE0C682203E85B00144B8E /* JsonAccess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JsonAccess.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,8 +65,6 @@
 				43CE0C4F2202D57800144B8E /* AppDelegate.m */,
 				43CE0C512202D57800144B8E /* ViewController.h */,
 				43CE0C522202D57800144B8E /* ViewController.m */,
-				43CE0C642202D91000144B8E /* NSDictionary+Json.h */,
-				43CE0C652202D91000144B8E /* NSDictionary+Json.m */,
 				43CE0C672203E85B00144B8E /* JsonAccess.h */,
 				43CE0C682203E85B00144B8E /* JsonAccess.m */,
 				43CE0C542202D57800144B8E /* Main.storyboard */,
@@ -153,7 +148,6 @@
 			files = (
 				43CE0C532202D57800144B8E /* ViewController.m in Sources */,
 				43CE0C5E2202D57900144B8E /* main.m in Sources */,
-				43CE0C662202D91000144B8E /* NSDictionary+Json.m in Sources */,
 				43CE0C692203E85B00144B8E /* JsonAccess.m in Sources */,
 				43CE0C502202D57800144B8E /* AppDelegate.m in Sources */,
 			);

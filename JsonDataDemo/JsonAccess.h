@@ -25,21 +25,15 @@ extern JsonAccess* Json(NSObject *obj);
 - (JsonAccess *(^)(NSInteger ))index;
 
 - (nullable NSString *)string;//遇到number类型会强转string
-- (nullable NSNumber *)number;//遇到string类型会强转number
+- (nullable NSNumber *)number;//遇到string类型会强转number,规则同yymodel
 - (nullable NSArray *)array;
 - (nullable NSDictionary *)dictionary;
 
+//字面量语法支持
+// Json(resultJSON)[@"ext"][@"btnList"][0][@"btnTitle"].string
 
-//- (JsonAccess *(^)(NSString *))dic;
-//- (JsonAccess *(^)(NSString *))string;//number类型会强转string
-//- (JsonAccess *(^)(NSString *))number;//string类型会强转number
-//- (JsonAccess *(^)(NSString *))array;
-//
-//- (JsonAccess *(^)(NSInteger ))dicIdx;
-//- (JsonAccess *(^)(NSInteger ))stringIdx;//number类型会强转string
-//- (JsonAccess *(^)(NSInteger ))numberIdx;//string类型会强转number
-//- (JsonAccess *(^)(NSInteger ))arrayIdx;
-
+-(JsonAccess *)objectForKeyedSubscript:(NSString *)key;
+-(JsonAccess *)objectAtIndexedSubscript:(NSUInteger)idx;
 @end
 
 NS_ASSUME_NONNULL_END

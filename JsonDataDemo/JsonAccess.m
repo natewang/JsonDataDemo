@@ -103,7 +103,6 @@ JsonAccess* Json(NSObject *obj) {
     };
 }
 
-
 - (NSString *)string {
     
     if ([self.data isKindOfClass:[NSString class]]) {
@@ -180,164 +179,21 @@ JsonAccess* Json(NSObject *obj) {
     return obj;
 }
 
+-(JsonAccess *)objectAtIndexedSubscript:(NSUInteger)idx {
+    
+    return self.index(idx);
+}
 
+//- (void)setObject:(id)anObject atIndexedSubscript:(NSUInteger)index{
+//    [self setValue:anObject forKey:[NSString stringWithFormat:@"_index%lu",index]];
+//}
 
+-(JsonAccess *)objectForKeyedSubscript:(id)key {
+    return self.key(key);
+}
 
-
-
-
-//- (JsonAccess *(^)(NSString *))dic
-//{
-//    return ^JsonAccess*(NSString *key) {
-//
-//        self.data = [self checkValueType:[NSDictionary class] key:key];
-//        return self;
-//    };
-//}
-//
-//- (JsonAccess *(^)(NSString *))string
-//{
-//    return ^JsonAccess*(NSString *key) {
-//
-//        NSString *string = [self checkValueType:[NSString class] key:key];
-//        if (string) {
-//            self.data = string;
-//        } else {
-//
-//            NSNumber *num = [self checkValueType:[NSNumber class] key:key];
-//            if (num) {
-//                self.data = num.stringValue;
-//            } else {
-//                self.data = nil;
-//            }
-//        }
-//
-//        return self;
-//
-//    };
-//}
-//
-//- (JsonAccess *(^)(NSString *))number
-//{
-//    return ^JsonAccess*(NSString *key) {
-//
-//        NSNumber *num = [self checkValueType:[NSNumber class] key:key];
-//        if (num){
-//            self.data = num;
-//        } else {
-//
-//            NSString *string = [self checkValueType:[NSString class] key:key];
-//            if (string) {
-//                self.data = IMNSNumberCreateFromID(string);
-//            } else {
-//                self.data = nil;
-//            }
-//        }
-//
-//        return self;
-//    };
-//}
-//
-//- (JsonAccess *(^)(NSString *))array
-//{
-//    return ^JsonAccess*(NSString *key) {
-//
-//        self.data = [self checkValueType:[NSArray class] key:key];
-//        return self;
-//    };
-//}
-//
-//- (JsonAccess *(^)(NSInteger ))dicIdx
-//{
-//    return ^JsonAccess*(NSInteger index) {
-//
-//        self.data = [self checkValueType:[NSDictionary class] index:index];
-//        return self;
-//    };
-//}
-//
-//- (JsonAccess *(^)(NSInteger ))stringIdx
-//{
-//    return ^JsonAccess*(NSInteger index) {
-//
-//        NSString *string = [self checkValueType:[NSString class] index:index];
-//        if (string) {
-//            self.data = string;
-//        } else {
-//
-//            NSNumber *num = [self checkValueType:[NSNumber class] index:index];
-//            if (num) {
-//                self.data = num.stringValue;
-//            } else {
-//                self.data = nil;
-//            }
-//        }
-//
-//        return self;
-//    };
-//}
-//
-//- (JsonAccess *(^)(NSInteger ))numberIdx
-//{
-//    return ^JsonAccess*(NSInteger index) {
-//
-//        NSNumber *num = [self checkValueType:[NSNumber class] index:index];
-//
-//        if (num) {
-//            self.data = num;
-//        } else {
-//
-//            NSString *string = [self checkValueType:[NSString class] index:index];
-//            if (string) {
-//                self.data = IMNSNumberCreateFromID(string);
-//            } else {
-//                self.data = nil;
-//            }
-//        }
-//
-//        return self;
-//    };
-//}
-//
-//- (JsonAccess *(^)(NSInteger ))arrayIdx
-//{
-//    return ^JsonAccess*(NSInteger index) {
-//
-//        self.data = [self checkValueType:[NSArray class] index:index];
-//        return self;
-//    };
-//}
-//
-//
-//
-//- (NSString *)stringValue {
-//
-//    if ([self.data isKindOfClass:[NSString class]]) {
-//        return (NSString *)self.data;
-//    }
-//    return nil;
-//}
-//- (NSNumber *)numberValue {
-//
-//    if ([self.data isKindOfClass:[NSNumber class]]) {
-//        return (NSNumber *)self.data;
-//    }
-//    return nil;
-//
-//}
-//- (NSArray *)arrayValue {
-//
-//    if ([self.data isKindOfClass:[NSArray class]]) {
-//        return (NSArray *)self.data;
-//    }
-//    return nil;
-//}
-//- (NSDictionary *)dicValue {
-//
-//    if ([self.data isKindOfClass:[NSDictionary class]]) {
-//        return (NSDictionary *)self.data;
-//    }
-//    return nil;
+//- (void)setObject:(id)object forKeyedSubscript:(id < NSCopying >)aKey{
+//    [self setValue:object forKey:aKey];
 //}
 
 @end
