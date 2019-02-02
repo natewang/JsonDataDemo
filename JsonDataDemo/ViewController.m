@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "JsonAccess.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,74 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    NSDictionary *ext = @{
+                          @"cardTitle": @"营销卡片消息标题",
+                          @"activityId": @"活动id",
+                          @"promotionTitle": @"营销产品标题-全部房型满99立减30",
+                          @"promotionDesp": @"营销产品描述-业务自己处理换行，最多支持5行",
+                          @"promotionImg": @"营销产品图片",
+                          @"startTime": @"活动开始日期，精确到毫秒的unix时间戳",
+                          @"endTime": @"活动结束日期，精确到毫秒的unix时间戳",
+                          @"btnList": @[@{
+                              @"btnTitle": @"按钮标题",
+                              @"jumpUrl": @{
+                                  @"app": @"app端落地页链接",
+                                  @"online": @"online端落地页链接",
+                                  @"web": @"H5端落地页链接",
+                                  @"number" : @"99",
+                                  @"string" : @(100)
+                              }
+                          }]
+                          };
+    
+    NSDictionary *resultJSON = @{
+                   @"ext" : ext,
+                   @"action" : @"CBZ26"
+                   };
+    
+    NSArray *arr = Json(resultJSON).key(@"ext").key(@"btnList").array;
+    NSLog(@"%@", arr);
+    
+    NSLog(@"%@", Json(resultJSON).key(@"ext").key(@"cardTitle").string);
+    //营销卡片消息标题
+    NSLog(@"%@", Json(resultJSON)
+          .key(@"ext")
+          .key(@"btnList")
+          .index(0)
+          .key(@"btnTitle").string);
+    //按钮标题
+    NSLog(@"%@", Json(resultJSON)
+          .key(@"ext")
+          .key(@"btnList")
+          .index(0)
+          .key(@"jumpUrl")
+          .key(@"number").number);
+    //
+    NSLog(@"%@", Json(resultJSON)
+          .key(@"ext")
+          .key(@"btnList")
+          .index(0)
+          .key(@"jumpUrl")
+          .key(@"string").string);
+    
+    NSLog(@"%@", Json(resultJSON).key(@"ext").key(@"cardTitle").number);
+    //null 取值类型错误 ❌
+    
+    NSLog(@"%@", Json(resultJSON)
+          .key(@"ext")
+          .key(@"btnList")
+          .index(100)
+          .key(@"btnTitle").string);
+    //null 数组越界 ❌
+    
+    NSLog(@"%@", Json(@"wrong argument")
+          .key(@"ext")
+          .key(@"btnList")
+          .index(0)
+          .key(@"btnTitle").string);
+    //null 传入参数错误❌
+    
 }
 
 
