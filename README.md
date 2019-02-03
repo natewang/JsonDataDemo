@@ -15,3 +15,5 @@
     NSLog(@"%@",Json(resultJSON)[@"ext"][@"btnList"][0][@"btnTitle"].string);
 ```
 详细见demo。
+
+博客 https://www.jianshu.com/p/a59d75684da3
